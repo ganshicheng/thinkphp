@@ -14,7 +14,8 @@ return [
     'default_app'      => 'index',
     // 默认时区
     'default_timezone' => 'Asia/Shanghai',
-
+    // 开启自动多模式
+    'auto_multi_app' => true,
     // 应用映射（自动多应用模式有效）
     'app_map'          => [],
     // 域名绑定（自动多应用模式有效）
@@ -26,7 +27,9 @@ return [
     'exception_tmpl'   => app()->getThinkPath() . 'tpl/think_exception.tpl',
 
     // 错误显示信息,非调试模式有效
-    'error_message'    => '页面错误！请稍后再试～',
+//    'error_message'    => '页面错误！请稍后再试～',
+    'error_message'    => env('app.error_message', '页面错误！请稍后再试～'),
+//    'error_message'    => Env::get('app.error_message', '页面错误！请稍后再试～'),
     // 显示错误信息
     'show_error_msg'   => false,
 ];
